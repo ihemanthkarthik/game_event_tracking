@@ -10,5 +10,5 @@ firehose = FirehoseClient("game-events-stream")
 
 @app.post("/events")
 def receive_event(event: EventModel):
-    result = firehose.send_event(event.model_dump())
+    result = firehose.send_event(event.model_dump()) # dict() is deprecated in pydantic v2, so used model_dump() instead
     return {"message": "Event received", "firehose": result}
