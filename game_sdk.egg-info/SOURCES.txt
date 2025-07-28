@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+setup.py
+game_sdk.egg-info/PKG-INFO
+game_sdk.egg-info/SOURCES.txt
+game_sdk.egg-info/dependency_links.txt
+game_sdk.egg-info/requires.txt
+game_sdk.egg-info/top_level.txt
+sdk/__init__.py
+sdk/client.py
+sdk/events.py
+tests/test_api.py
+tests/test_sdk.py

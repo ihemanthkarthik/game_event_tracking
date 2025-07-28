@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: game_sdk
+Version: 0.1.0
+Summary: A lightweight SDK for tracking game install and purchase events.
+Author: Hemanth Kumar Karthikeyan
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.25.0
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# game_event_tracking
+An SDK used for tracking gaming events (install and purchase) from a mobile game application
