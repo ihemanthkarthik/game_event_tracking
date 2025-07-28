@@ -10,5 +10,5 @@ firehose = FirehoseClient("game-events-stream")
 
 @app.post("/events")
 def receive_event(event: EventModel):
-    result = firehose.send_event(event.dict())
+    result = firehose.send_event(event.model_dump())
     return {"message": "Event received", "firehose": result}
