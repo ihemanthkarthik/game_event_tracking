@@ -36,8 +36,7 @@ class FirehoseClient:
         # Convert the event to bytes
         event_data = json.dumps(event).encode("utf-8")
 
-        # In real world, you'd use:
-        # self.client.put_record(DeliveryStreamName=..., Record=...)
+        # Log the event data for debugging
         logging.info(f"[MOCK SEND TO FIREHOSE] Stream: {self.stream_name}")
         response = self.client.put_record(
             DeliveryStreamName=self.stream_name,
