@@ -29,9 +29,9 @@ CREATE TABLE Event_Master (
     event_type_id INTEGER PRIMARY KEY,
     event_type    STRING UNIQUE
 );
-``` </pre>
+</pre>
 
-<pre> ```sql
+<pre>
 CREATE TABLE Events_Logger (
     event_id         STRING,
     event_type_id    INTEGER REFERENCES Event_Master(event_type_id),
