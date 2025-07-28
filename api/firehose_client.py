@@ -2,7 +2,7 @@
 import boto3
 import json
 import logging
-from botocore.stub import Stubber
+from botocore.stub import Stubber, ANY
 
 # Create a boto3 Firehose client
 firehose_client = boto3.client("firehose", region_name="us-east-1")
@@ -14,9 +14,9 @@ stubber = Stubber(firehose_client)
 stubber.add_response(
     "put_record",
     expected_params={
-        "DeliveryStreamName": "mock-game-events-stream",
+        "DeliveryStreamName": "game-events-stream",
         "Record": {
-            "Data": b'{"mock": "event"}'
+            "Data": ANY
         },
     },
     service_response={
