@@ -11,18 +11,19 @@ firehose_client = boto3.client("firehose", region_name="us-east-1")
 stubber = Stubber(firehose_client)
 
 # Set up a fake successful response
-stubber.add_response(
-    "put_record",
-    expected_params={
-        "DeliveryStreamName": "game-events-stream",
-        "Record": {
-            "Data": ANY
+for _ in range(10000):  # Simulate multiple calls to put_record
+    stubber.add_response(
+        "put_record",
+        expected_params={
+            "DeliveryStreamName": "game-events-stream",
+            "Record": {
+                "Data": ANY
+            },
         },
-    },
-    service_response={
-        "RecordId": "12345"
-    }
-)
+        service_response={
+            "RecordId": "12345"
+        }
+    )
 
 # Activate the stub
 stubber.activate()
